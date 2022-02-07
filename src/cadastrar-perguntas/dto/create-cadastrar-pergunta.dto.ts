@@ -8,7 +8,10 @@ export class CreateCadastrarPerguntaDto extends CadastrarPergunta
     pergunta: string;
 
     @IsString()
+    letra_a: string;
+    letra_b: string;
+    letra_c: string;
+    letra_d: string;
+    letra_e: string;
     resposta_certa: string;
-
-    opcoes?: Prisma.OpcoesUncheckedCreateNestedOneWithoutPerguntaInput;
 }
