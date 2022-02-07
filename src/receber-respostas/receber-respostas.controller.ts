@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Body, Patch, } from '@nestjs/common';
 import { ReceberRespostasService } from './receber-respostas.service';
 import { CreateReceberRespostaDto } from './dto/create-receber-resposta.dto';
 
@@ -6,7 +6,7 @@ import { CreateReceberRespostaDto } from './dto/create-receber-resposta.dto';
 export class ReceberRespostasController {
   constructor(private readonly receberRespostasService: ReceberRespostasService) {}
 
-  @Post()
+  @Patch()
   async create(@Body() createReceberRespostaDto: CreateReceberRespostaDto) {
     return this.receberRespostasService.create(createReceberRespostaDto);
   }

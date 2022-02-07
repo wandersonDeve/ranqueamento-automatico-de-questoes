@@ -6,6 +6,9 @@ export class CreateReceberRespostaDto {
 
   @IsString()
   resposta: string;
+
+  @IsNumber()
+  pontos: number;
 }
 
 // NESSA RESPOSTA PEGAMOS O ID DA PERGUNTA E A LETRA ESCOLHIDA PELA PESSOA
