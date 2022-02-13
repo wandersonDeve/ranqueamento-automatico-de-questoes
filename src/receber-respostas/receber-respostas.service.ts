@@ -60,21 +60,21 @@ export class ReceberRespostasService {
       });
     }
 
-    //CALCULANDO A MEDIA ENTRE AS RESPOSTA CERTAS E ERRADAS
-    const media = pergunta.qtn_respotas_certas / pergunta.qtn_respotas_erradas;
+    //CALCULANDO A porcentagem de respostas certas
+    const media = (100/(pergunta.qtn_respotas_certas + pergunta.qtn_respotas_erradas))*pergunta.qtn_respotas_certas
 
     console.log(media);
 
-    //FACIL > 1
-    //MEDIO = 1
-    //DIFICIL < 1
+    //Facil <=  100%
+    //Medio <= 66%
+    //Dificil <= 33%
 
-    if (media > 1) {
-      var resultado = 'Facil';
-    } else if (media < 1) {
+    if (media <= 33) {
       var resultado = 'Dificil';
-    } else {
+    } else if (media <= 66) {
       var resultado = 'Media';
+    } else {
+      var resultado = 'Facil';
     }
 
     //SALVANDO NO BANCO O RANK ATUAL DA PERGUNTA
