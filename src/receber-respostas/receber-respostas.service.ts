@@ -65,9 +65,9 @@ export class ReceberRespostasService {
 
     console.log(media);
 
-    //Facil <=  100%
-    //Medio <= 66%
     //Dificil <= 33%
+    //Medio   <= 66%
+    //Facil   <= 100%
 
     if (media <= 33) {
       var resultado = 'Dificil';
@@ -85,7 +85,7 @@ export class ReceberRespostasService {
       },
     });
 
-    //NIVEL DO USUARIO DA PROXIMA PERGUNTA
+    //NIVEL DO USUARIO PARA A PROXIMA PERGUNTA
     if (pontos < 3) {
       var proximaPergunta = 'Facil';
     } else if (pontos < 6) {
@@ -94,7 +94,7 @@ export class ReceberRespostasService {
       var proximaPergunta = 'Dificil';
     }
 
-    //CRIA UM GRUPO COM AS PERGUNTAS DO NIVEL QUE O USUARIO ESTA
+    //CRIA UM GRUPO COM AS PERGUNTAS DO NIVEL QUE O USUARIO ESTA ATUALMENTE
     const grupoPergunta = this.db.pergunta.findMany({
       where: {
         rank: proximaPergunta,
